@@ -1,0 +1,29 @@
+.circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+
+  
+  .tieuchuan{
+    background-color: #005DC7;
+  }
+  .namtruoc{
+    background-color: #F64E60;
+  }
+  .namnay{
+    background-color: #FFA800;
+  }
+  .danghi{
+    background-color: #1BC5BD;
+  }
+  
+  //Animation count-up
+
+  .count-up {
+    transition: textContent 1s ease;
+  }
+  
+  

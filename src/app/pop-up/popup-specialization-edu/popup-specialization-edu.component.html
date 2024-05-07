@@ -1,0 +1,69 @@
+<codx-form #form [headerText]="'Chuyên Ngành Đào Tạo'" [dialog]="dialog" [body]="body" [footer]="footer">
+</codx-form>
+
+<ng-template #body>
+    <div>
+        <div class="form-group row mt-5">
+            <div class="col-6">
+                <codx-label fiedName="Tên chuyên nghành"></codx-label>
+                <codx-input type="combobox"></codx-input>
+            </div>
+
+            <div class="col-6">
+                <codx-label fiedName="Tên bằng cấp"></codx-label>
+                <codx-input type="combobox"></codx-input>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6">
+                <codx-label fiedName="Nơi đào tạo"></codx-label>
+                <codx-input type="combobox"></codx-input>
+            </div>
+
+            <div class="col-6">
+                <codx-label fiedName="Điểm"></codx-label>
+                <codx-input type="combobox"></codx-input>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6">
+                <codx-label fiedName="Xếp loại"></codx-label>
+                <codx-input type="combobox"></codx-input>
+            </div>
+
+            <div class="col-6">
+                <codx-label fiedName="Từ ngày"></codx-label>
+                <codx-datetime></codx-datetime>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6">
+                <codx-label fiedName="Đến ngày"></codx-label>
+                <codx-datetime></codx-datetime>
+            </div>
+
+            <div class="d-flex flex-column  col-6">
+                <codx-label fiedName="Đào tạo nội bộ" class="w-100"></codx-label>
+                <codx-input  type="checkbox"></codx-input>
+            </div>
+        </div>
+
+    </div>
+</ng-template>
+
+<ng-template #footer>
+    <div class="d-flex justify-content-between" *ngIf="actionType != 'view'">
+        <button class="btn btn-sm btn-outline btn-outline-primary btn-active-light-primary d-flex flex-row">
+            <span class="icon-cloud_upload btn-text-primary me-2"></span>
+            <codx-label fiedName="lblUploadFile" default="Đính kèm" [formModel]="form.formModel"></codx-label>
+        </button>
+
+        <button class="btn btn-primary">
+            <i class="icon-save"></i>
+            <codx-label default="Lưu" name="lblSave" [formModel]="form.formModel"></codx-label>
+        </button>
+    </div>
+</ng-template>

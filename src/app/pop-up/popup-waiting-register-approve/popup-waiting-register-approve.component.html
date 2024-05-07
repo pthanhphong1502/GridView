@@ -1,0 +1,229 @@
+<div class="pop-up-wrapper">
+    <!-- header -->
+    <div style="height: 100px"></div>
+    <!-- content -->
+    <div class="d-flex justify-content-between">
+        <div class="w-40 px-6 scroll-y">
+            <!-- sub header -->
+            <div class="">
+                <div class="d-flex justify-content-between gap-3 pb-4">
+                    <codx-searchbar class="d-flex flex-grow-1" type="full" ></codx-searchbar>
+                    <codx-dropdown-select type="combobox"
+                        cssClass="d-flex justify-content-between"></codx-dropdown-select>
+
+                </div>
+                <div class="d-flex justify-content-start gap-2 pb-1">
+                    <codx-dropdown-select type="valuelist" emptyText="Trạng Thái"
+                        cssClass="rounded-pill"></codx-dropdown-select>
+                    <codx-dropdown-calendar cssPopup="h-550px w-350px" [cssClass]="'rounded-pill om-calendar'" [selectedType]="'y'"
+                        [displayOption]="['y']" emptyText="Từ Ngày"  
+                        ></codx-dropdown-calendar>
+                    <codx-dropdown-calendar cssPopup="h-550px w-350px" [cssClass]="'rounded-pill'" [selectedType]="'y'"
+                        [displayOption]="['y']" emptyText="Đến Ngày"></codx-dropdown-calendar>
+                </div>
+            </div>
+            <!-- Main content -->
+            <div>
+                <!-- <codx-listview entityName="DM_FileInfo" gridViewName="grvFileInfo" formName="FileInfo"
+                    [itemTemplate]="templateNewEmployee" service="DM" height="50px" class="newemployee-listview">
+                </codx-listview> -->
+                <!-- <ng-template #templateNewEmployee> -->
+
+                <!-- </ng-template> -->
+                <ng-container *ngFor="let item of fakeData ; let i = index">
+                    <div class="d-flex fs-6 fw-500 border-bottom py-4" (click)="onItemSelected(item)">
+                        <!-- <div class="pe-2 pt-1">
+                            <input type="checkbox" name="" id="" class="checkbox-item">
+                        </div> -->
+                        <!-- <codx-searchbar></codx-searchbar> -->
+                        <div class="d-flex gap-2">
+                            <!-- <codx-imgs [isToolTip]="true" [objectId]="" [objectName]=""
+                              [objectType]="'AD_Users'" [width]="30" [numberImages]="1">
+                            </codx-imgs> -->
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="fw-bold line-clamp fs-5 line-clamp-1">Nghỉ phép</div>
+                                    <div class="fs-7 fw-500 text-gray-600">2 ngày</div>
+                                </div>
+                                <div class="fs-6">21/01/2024 - 22/01/2024</div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div class="fs-6 text-gray-600" style="
+                                        width: 80%;
+                                    ">
+                                        Bận việc gia đình nên xin nghỉ phép 1 ngày, sẽ cố gắng hoàn thành
+                                        task đầy đủ
+                                    </div>
+                                    <div class="status status1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <!-- content right -->
+        <div class="w-60">
+            <!-- sub header -->
+            <div>
+                <div class="d-flex justify-content-between">
+                    <div class="fs-1 fw-400 fw-bolder">
+                        <ng-container *ngIf="isShow; else elseBlock">
+                            <span>Sửa</span>
+                        </ng-container>
+                        <ng-template #elseBlock>
+                            <span>Chờ</span>
+                        </ng-template>
+                        duyệt nghỉ phép
+                    </div>
+
+                    <span class="edit-button icon-edit_fill me-4"
+                        [ngClass]="{ 'disabled': isShow, 'opacity': !isShow ? '0.5' : '1'}"
+                        (click)="onEditForm()"></span>
+                </div>
+                <div class="d-flex gap-4 align-items-center py-2">
+
+                    <div class="cancel-button  d-flex align-items-center gap-2 button-approve p-2"
+                        [class.disabled]="!isShow" (click)="onCancelEditForm()"
+                        [style.pointer-events]="!isShow ? 'none' : 'auto'"
+                        [ngStyle]="{'opacity': !isShow ? '0.5' : '1'}">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none">
+                                <path
+                                    d="M8.82883 7L11.3697 4.45916C11.6815 4.14736 11.6815 3.64184 11.3697 3.32979L10.805 2.7651C10.4932 2.4533 9.98766 2.4533 9.67561 2.7651L7.13477 5.30594L4.59393 2.7651C4.28213 2.4533 3.7766 2.4533 3.46455 2.7651L2.89986 3.32979C2.58807 3.64158 2.58807 4.14711 2.89986 4.45916L5.4407 7L2.89986 9.54084C2.58807 9.85264 2.58807 10.3582 2.89986 10.6702L3.46455 11.2349C3.77635 11.5467 4.28213 11.5467 4.59393 11.2349L7.13477 8.69406L9.67561 11.2349C9.9874 11.5467 10.4932 11.5467 10.805 11.2349L11.3697 10.6702C11.6815 10.3584 11.6815 9.85289 11.3697 9.54084L8.82883 7Z"
+                                    fill="#F64E60" />
+                            </svg>
+                        </div>
+                        <div class="text-gray-600">Hủy</div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Main content -->
+            <div class="h-100">
+                <codx-form [body]="body" [footer]="footer" [showHeader]="false">
+                </codx-form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #body>
+    <div>
+        <div class="form-group row mt-5">
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Ngày đăng ký" class="text-gray-400"></codx-label>
+                <ng-container *ngIf="isShow; else staticLabel">
+                    <codx-datetime></codx-datetime>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <codx-label fiedName="26/03/2024"></codx-label>
+                </ng-template>
+            </div>
+
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Người đăng ký" class="text-gray-400"></codx-label>
+                <ng-container *ngIf="isShow; else staticLabel">
+                    <codx-input></codx-input>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <codx-label fiedName="Nguyễn Ngọc Kim Trang"></codx-label>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Từ ngày" class="text-gray-400"></codx-label>
+                <ng-container *ngIf="isShow; else staticLabel">
+                    <codx-datetime></codx-datetime>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <codx-label fiedName="26/03/2024"></codx-label>
+                </ng-template>
+            </div>
+
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Đến ngày" class="text-gray-400 line-clamp line-clamp-1"></codx-label>
+                <ng-container *ngIf="isShow; else staticLabel">
+                    <codx-datetime></codx-datetime>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <codx-label fiedName="26/03/2024"></codx-label>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Loại nghỉ" class="text-gray-400"></codx-label>
+                <ng-container *ngIf="isShow; else staticLabel">
+                    <codx-input></codx-input>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <codx-label fiedName="Nghỉ phép"></codx-label>
+                </ng-template>
+            </div>
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Buổi bắt đầu nghỉ" class="text-gray-400"></codx-label>
+                <ng-container *ngIf="isShow; else staticLabel">
+                    <codx-input></codx-input>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <codx-label fiedName="26/03/2024"></codx-label>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Trừ ngày nghỉ tuần" class="text-gray-400"></codx-label>
+                <codx-input type="checkbox" labelPosition="after" [disabled]="!isShow"></codx-input>
+            </div>
+
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Trừ ngày nghỉ lễ" class="text-gray-400"></codx-label>
+                <codx-input type="checkbox" [disabled]="!isShow"></codx-input>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Tổng ngày nghỉ" class="text-gray-400"></codx-label>
+                <ng-container *ngIf="isShow; else staticLabel">
+                    <codx-datetime></codx-datetime>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <codx-label fiedName="1.00"></codx-label>
+                </ng-template>
+            </div>
+            <div class="col-6 d-flex flex-column">
+                <codx-label fiedName="Số ngày nghỉ" class="text-gray-400"></codx-label>
+                <ng-container *ngIf="isShow; else staticLabel">
+                    <codx-datetime></codx-datetime>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <codx-label fiedName="Bận việt gia đình"></codx-label>
+                </ng-template>
+            </div>
+        </div>
+
+
+
+    </div>
+</ng-template>
+
+<ng-template #footer>
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-sm btn-outline btn-outline-primary btn-active-light-primary d-flex flex-row">
+            <span class="icon-cloud_upload btn-text-primary me-2"></span>
+            <codx-label fiedName="lblUploadFile" default="Đính kèm"></codx-label>
+        </button>
+
+        <button class="btn btn-primary">
+            <i class="icon-save"></i>
+            <codx-label default="Lưu" name="lblSave"></codx-label>
+        </button>
+    </div>
+</ng-template>

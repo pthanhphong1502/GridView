@@ -1,0 +1,39 @@
+<div class="p-2">
+  <div class="p-3 pt-2 ps-1 border-bottom fs-14 hcs-text fw-bold">
+    7 ngày chấm công gần nhất
+  </div>
+  <div class="pt-2">
+
+    <ejs-chart
+      [chartArea]="chartArea"
+      id="chart-container"
+      height="185"
+      [primaryXAxis]="primaryXAxis"
+      [primaryYAxis]="primaryYAxis"
+      [tooltip]="tooltipSettings"
+      (load)="load($event)"
+    >
+      <e-series-collection>
+        <e-series
+          [dataSource]="chartData"
+          fill="#0078FF"
+          type="Column"
+          columnSpacing="0.5"
+          columnWidth="0.75"
+          xName="date"
+          yName="In"
+        ></e-series>
+        <e-series
+          [dataSource]="chartData"
+          fill="#06DDB8"
+          type="Column"
+          columnSpacing="0.5"
+          xName="date"
+          columnWidth="0.75"
+          yName="Out"
+        ></e-series>
+      </e-series-collection>
+    </ejs-chart>
+  </div>
+</div>
+

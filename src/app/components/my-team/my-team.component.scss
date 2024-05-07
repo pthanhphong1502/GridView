@@ -1,0 +1,225 @@
+// .myTeamContainer {
+//     position: relative;
+// }
+
+// .toogleIcon {
+//     position: absolute;
+//     width: 50px;
+//     background-color: red;
+//     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+//     height: 44.19px;
+//     top: 10px;
+//     right: 180px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     cursor: pointer;
+//     z-index: 99;
+// }
+
+.all-container {
+
+    /* delete soon */
+    margin-top: 200px;
+}
+
+
+/* css cho card user */
+
+.view-all {
+    color: #007bff;
+}
+
+.user-avatar {
+    position: relative;
+    display: inline-block;
+}
+
+.user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.user-status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffff;
+}
+
+.YOW.fw-bold {
+    color: #007bff;
+    font-weight: 500;
+}
+
+.my-team-searchbar {
+    padding: 17px 0;
+}
+
+.e-tab .e-tab-header .e-indicator {
+    background: blue;
+}
+
+.e-tab .e-tab-text {
+    font-size: 11px !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 13px;
+    color: #6C757D !important;
+}
+
+.e-toolbar-item.e-icon.e-template {
+    padding: 0 !important;
+}
+
+.e-hscroll_0_nav.e-scroll-nav {
+    display: none;
+}
+
+.e-tab-wrap {
+    padding: 0 !important;
+}
+
+.e-hscroll:not(.e-scroll-device) {
+    padding: 0 !important;
+}
+
+.e-tab .e-toolbar-item.e-active .e-tab-text {
+    color: #005DC7 !important;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.e-tab .e-tab-text {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #6C757D !important;
+    padding-bottom: 12px;
+}
+
+.e-tab .e-tab-header .e-toolbar-item:not(.e-separator) {
+    margin-right: 12px !important;
+}
+
+.e-tab .e-tab-header:not(.e-vertical)::before {
+    border-width: 0 !important;
+}
+
+.e-tab-header.e-control.e-toolbar.e-lib.e-keyboard {
+    padding-bottom: 17px !important;
+}
+
+div#e-item-element_2 {
+    margin-right: 0px !important;
+}
+
+.e-tab .e-tab-header .e-scroll-nav,
+.e-tab .e-tab-header .e-hscroll:not(.e-scroll-device) .e-scroll-nav {
+    display: none !important;
+}
+
+// .e-tab .e-tab-header .e-toolbar-items{
+//     display: none;
+// }
+
+
+.e-toolbar-item.e-icon.e-template .e-tab-wrap {
+    // padding: 0 8px !important;
+}
+
+.e-hscroll_0_nav.e-scroll-nav.e-scroll-right-nav.e-lib.e-touch {
+    display: none !important;
+}
+
+.e-hscroll .e-scroll-nav {
+    background: white !important;
+}
+
+div#hscroll_0_nav_right {
+    display: none !important;
+}
+
+.e-hscroll .e-scroll-nav {
+    background-color: transparent !important;
+}
+
+.e-tab .e-tab-header .e-scroll-nav,
+.e-tab .e-tab-header .e-hscroll:not(.e-scroll-device) .e-scroll-nav {
+    display: none !important;
+}
+
+//Chuyển tab
+
+.e-tab .e-tab-header:not(.e-vertical) .e-indicator, .e-tab .e-tab-header.e-vertical .e-indicator {
+    transition: none !important;
+}
+
+
+
+.all-container {
+
+    margin-top: 300px;
+}
+
+
+
+.fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    // display: none;
+    transition: right 0.3s ease;
+}
+
+.fab-open {
+    right: calc(20px + 400px);
+}
+
+.user-status.active {
+    color: #08AD36;
+}
+
+.user-status.off {
+    color: #FFA800;
+}
+
+.user-status.busy {
+    color: #F64E60;
+}
+
+@media (max-width: 99px) {
+    .fab-container {
+        display: inline-flex;
+    }
+
+    .myteam-sidebar {
+        display: none !important;
+    }
+
+
+}

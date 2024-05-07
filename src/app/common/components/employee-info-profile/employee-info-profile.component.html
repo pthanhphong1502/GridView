@@ -1,0 +1,560 @@
+<codx-views #view idField="employeeID" [views]="views" [autoLoad]="false" class="w-100">
+</codx-views>
+<ng-template #panelContent>
+  <div class="page-pw h-employee pb-0 w-100">
+    <div class="page-profile w-100">
+      <div class="d-flex">
+        <div class="user-left me-4 border w-350px min-w-300px bg-white">
+          <div class="profile-bg"></div>
+          <div class="d-flex flex-column text-center mx-4 profile-info">
+            <div class="mb-3 mt-4 d-flex justify-content-center align-items-top">
+              <!-- <div class="w-30px min-w-30px">
+                <span *ngIf="crrIndex > 0" type="button" class="btn btn-icon btn-light-primary rounded-circle"
+                  (click)="previousEmp()">
+                  <i class="icon-arrow_back_ios icon-16"></i>
+                </span>
+              </div> -->
+              <div class="d-flex justify-content-center">
+                <div class="position-relative mt-1">
+                  <!-- <codx-img >
+                  </codx-img> -->
+
+                  <div ngbDropdown class="position-absolute bottom-0 start-0">
+                    <span type="button" class="btn btn-icon btn-sm rounded-circle btn-primary" ngbDropdownToggle>
+                      <i class="icon-keyboard_arrow_down"></i>
+                    </span>
+                    <div ngbDropdownMenu class="" style="min-width: 400px">
+                      <div class="card card-flush">
+                        <div class="card-body py-2 px-3">
+                          <div class="d-flex flex-column">
+                            <div class="d-flex flex-wrap align-items-center mb-2">
+                              <div class="d-flex align-items-bottom me-2">
+                                <span class="icon-cake icon-16 text-gray-800 me-1"></span>
+                                <span class="text-dark fw-bold">
+
+                                </span>
+                              </div>
+                              <div class="d-flex align-items-center">
+                                <span #gender>
+                                  <!-- <codx-vll [name]="'HRGender'" [showText]="true" [field]="'Gender'"
+                                    [showBgColor]="true" [formModel]="eInfoFormModel" [showIcon]="false"
+                                    [value]="infoPersonal?.gender">
+                                  </codx-vll> -->
+                                </span>
+                              </div>
+                              <div class="d-flex align-items-center">
+                                <span class="icon-i-info-circle-fill icon-6 me-2 text-gray-400"></span>
+                                <!-- <span class="fw-bold" [innerHTML]="
+                                    infoPersonal?.maritalStatus
+                                      | formatvalue
+                                        : eInfoFormModel
+                                        : 'maritalStatus'
+                                      | async
+                                  ">
+                                </span> -->
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                              <span class="text-dark">
+                                <!-- <span [innerHTML]="
+                                    infoPersonal?.personalEmail
+                                      | formatvalue
+                                        : eInfoFormModel
+                                        : 'personalEmail'
+                                      | async
+                                  "></span> -->
+                              </span>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-2">
+                              <codx-label class="text-gray-700" fiedName="PITNumber">
+                              </codx-label>
+                              <!-- <span [innerHTML]="
+                                  infoPersonal?.pitNumber
+                                    | formatvalue : eInfoFormModel : 'pitNumber'
+                                    | async
+                                "></span> -->
+                            </div>
+
+                            <div class="d-flex d-flex justify-content-between mb-2">
+                              <codx-label class="text-gray-700" fiedName="SIRegisterNo">
+                              </codx-label>
+                              <!-- <span class="text-dark" [innerHTML]="
+                                  infoPersonal?.siRegisterNo
+                                    | formatvalue
+                                      : eInfoFormModel
+                                      : 'siRegisterNo'
+                                    | async
+                                "></span> -->
+                            </div>
+                            <hr class="m-0" />
+                            <div class="info-dropdownlist pt-2">
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="joinedOn">
+                                </codx-label>
+                                <span class="text-dark fw-bold">
+                                  <!-- <span [innerHTML]="
+                                      infoPersonal?.joinedOn
+                                        | formatvalue
+                                          : eInfoFormModel
+                                          : 'joinedOn'
+                                        | async
+                                    "></span> -->
+                                </span>
+                              </div>
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="hiredOn">
+                                </codx-label>
+                                <span class="text-dark">
+
+                                </span>
+                              </div>
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="ContractTypeID"
+                                  [default]="'Hợp đồng hiện tại'">
+                                </codx-label>
+                                <span class="text-primary">
+
+                                </span>
+                              </div>
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="EmployeeTypeID">
+                                </codx-label>
+                                <span class="text-primary">
+
+                                </span>
+                              </div>
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="DomainUser">
+                                </codx-label>
+                                <span class="text-primary">
+
+                                </span>
+                              </div>
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="lineManager">
+                                </codx-label>
+                                <span>
+                                  <span *ngIf="lineManager; else noLineManagerInfo2" class="fw-bold text-dark">
+                                    {{ lineManager?.employeeName }}
+                                  </span>
+                                  <ng-template #noLineManagerInfo2>
+
+                                  </ng-template>
+                                </span>
+                              </div>
+
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="timeCardNo">
+                                </codx-label>
+
+                                <span class="text-dark fw-bold">
+                                  <span>{{ infoPersonal?.timeCardNo }}</span>
+                                </span>
+                              </div>
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="shiftCalendarID">
+                                </codx-label>
+                                <span class="text-dark fw-bold">
+                                  <span>{{
+                                    infoPersonal?.shiftCalendarID
+                                    }}</span>
+                                </span>
+                              </div>
+                              <div class="d-flex justify-content-between mb-3">
+                                <codx-label class="text-gray-700" fiedName="ALObjectID">
+                                </codx-label>
+
+                                <span class="text-dark fw-bold">
+
+                                </span>
+                              </div>
+                              <div class="d-flex justify-content-between">
+                                <codx-label class="text-gray-700" fiedName="payrollGroupID">
+                                </codx-label>
+
+                                <span class="text-dark fw-bold">
+
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-30px min-w-30px">
+                <span type="button" class="btn btn-icon btn-light-primary rounded-circle">
+                  <i class="icon-arrow_forward_ios icon-16"></i>
+                </span>
+              </div>
+            </div>
+            <div class="d-flex flex-center">
+              <div class="fs-5-sm d-flex align-items-center mb-1">
+                <!-- <span class="icon-qr_code_scanner icon-16 me-2"></span>
+                <span style="margin-top: 2px" #id placement="bottom" [title]="eInfoHeaderText?.EmployeeID">{{ employeeID
+                  }}</span>
+                <span *ngIf="infoPersonal" class="icon-i-info-circle-fill icon-4 mx-3 text-gray-600"></span> -->
+                <span class="fw-bold" placement="bottom">{{
+                  infoPersonal?.employeeName }}</span>
+              </div>
+            </div>
+            <div placement=" bottom" class="text-gray-500 mb-1" *ngIf="infoPersonal">
+              {{ this.infoPersonal.PositionName }}
+            </div>
+            <div class="text-danger fw-bold">
+              <span class="icon-qr_code_scanner icon-16 me-2"></span>
+              <!-- <span style="margin-top: 2px" #id placement="bottom" [title]="eInfoHeaderText?.EmployeeID">{{ employeeID
+                }}</span> -->
+            </div>
+            <div>
+              <span>HCM</span>
+            </div>
+            <!-- <div class="d-flex flex-column flex-center">
+              <div [title]="eInfoHeaderText?.OrgUnitID" class="text-gray-500 mb-1" *ngIf="infoPersonal">{{orgUnitStr}}
+              </div>
+
+              <div [title]="eInfoHeaderText?.DepartmentID" class="text-gray-500 mb-1"
+                *ngIf="infoPersonal && orgUnitStr != DepartmentStr">{{DepartmentStr}}</div>
+            </div> -->
+          </div>
+          <div class="user-menu scroll-y w-100 border-top">
+            <div class="d-flex flex-column ps-4 pt-3 pb-1 border-bottom fw-bold">
+              <div class="d-flex flex-wrap mb-1">
+                <div class="d-flex align-items-center text-gray-700 me-5">
+                  <!-- <span
+                    placement="bottom"
+                    [title]="eInfoHeaderText?.JoinedOn"
+                    #joinedOn
+                    *ngIf="eInfoFormModel"
+                    [innerHTML]="
+                      infoPersonal?.joinedOn
+                        | formatvalue : eInfoFormModel : 'joinedOn'
+                        | async
+                    "
+                  ></span> -->
+                  <span class=""></span>
+                  <span class="text-dark">
+                    <!-- <span placement="bottom" [title]="eInfoHeaderText?.Mobile" *ngIf="eInfoFormModel" [innerHTML]="
+                        infoPersonal?.mobile
+                          | formatvalue : eInfoFormModel : 'mobile'
+                          | async
+                      "></span> -->
+                  </span>
+                </div>
+                <!-- <div *ngIf="eInfoFormModel" placement="bottom" [title]="eInfoHeaderText?.Status">
+                  <codx-vll class="badge" [field]="'Status'" [value]="infoPersonal?.status" [formModel]="eInfoFormModel"
+                    [showText]="true" [showBgColor]="true"></codx-vll>
+                </div> -->
+              </div>
+              <div class="d-flex align-items-center mb-1">
+                <span class=""></span>
+                <span class="text-dark" placement="bottom">
+                  <!-- <span #email *ngIf="eInfoFormModel" [innerHTML]="
+                      infoPersonal?.email
+                        | formatvalue : eInfoFormModel : 'email'
+                        | async
+                    "></span> -->
+                </span>
+              </div>
+              <div class="d-flex align-items-center mb-1">
+                <span class="icon-date_range icon-16 me-2"></span>
+                <span></span>
+              </div>
+              <div class="d-flex align-items-center mb-1">
+                <!-- <span class=""></span>
+                <span placement="bottom" [title]="eInfoHeaderText?.Phone" class="text-dark me-3" [innerHTML]="
+                  infoPersonal?.phone
+                    | formatvalue : eInfoFormModel : 'phone'
+                    | async
+                "></span>
+                <span class=""></span>
+                <span class="text-dark">
+                  <span placement="bottom" [title]="eInfoHeaderText?.Mobile" *ngIf="eInfoFormModel" [innerHTML]="
+                    infoPersonal?.mobile
+                      | formatvalue : eInfoFormModel : 'mobile'
+                      | async
+                  "></span>
+                </span> -->
+
+                <span class=""></span>
+                <span placement="bottom" class="text-dark me-3"></span>
+              </div>
+            </div>
+            <div class="d-flex flex-column ps-4 pt-3 pb-1 border-bottom">
+              <div class="d-flex flex-wrap mb-1">
+                <div class="d-flex align-items-center text-gray-700 me-5">
+                  <span>Quản lý trực tiếp:</span>
+                  <span class="ms-2 text-capitalize fw-bold">Lê Hồng Tươi</span>
+                </div>
+                <!-- <div *ngIf="eInfoFormModel" placement="bottom" [title]="eInfoHeaderText?.Status">
+                    <codx-vll class="badge" [field]="'Status'" [value]="infoPersonal?.status" [formModel]="eInfoFormModel"
+                      [showText]="true" [showBgColor]="true"></codx-vll>
+                  </div> -->
+              </div>
+              <div class="d-flex align-items-center mb-1">
+                <span>Quản lý gián tiếp:</span>
+                <span class="ms-2 text-capitalize fw-bold">Phạm Hữu Thời</span>
+              </div>
+            </div>
+
+            <ul class="nav nav-tabs nav-pills flex-column border-0 ps-3 pb-0 w-100 fw-bold text-muted">
+              <li class="nav-item w-100 mb-1 mt-2 mb-2">
+                <a class="nav-link w-100 btn btn-lg btn-clean active" data-bs-toggle="tab" [id]="'tab_100'">
+                  <div class="d-flex align-items-center">
+                    <span class="icon-18 me-2" [ngClass]="'icon-person'"></span>
+                    <div class="fw-bold">
+                      <span>Thống kê tổng quan</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <ng-container *ngFor="let item of lstTab; let index = index">
+                <li class="nav-item w-100 mb-1 mt-2 mb-2">
+                  <a class="nav-link w-100 btn btn-lg btn-clean" data-bs-toggle="tab">
+                    <div class="d-flex align-items-center">
+                      <span class="icon-18 me-2" [ngClass]="
+                          item?.largeIcon ? item?.largeIcon : 'icon-person'
+                        "></span>
+                      <div class="fw-bold">
+                        {{ item.customName }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ng-container>
+            </ul>
+
+            <div class="d-flex align-items-center mb-1">
+              <!-- Category's name -->
+              <div class="fw-bold font-size-h5 ps-4 pt-3 pb-1">
+                <span>THÔNG TIN TÀI KHOẢN</span>
+              </div>
+              <div></div>
+              <span class="ms-2 text-capitalize fw-bold"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100 user-right overflow-hidden flex-grow-1" id="maincontent">
+          <div class="tab-content">
+            <!-- Pane 0: Sơ yếu lí lịch -->
+            <div class="tab-pane fade show active" id="pane_100">
+              <ng-container [ngTemplateOutlet]="dashboard"></ng-container>
+            </div>
+            <!-- Pane 1: Sơ yếu lí lịch -->
+            <!-- <div
+              *ngIf="
+                curriculumVitaeFunc && curriculumVitaeFunc.isActive == true
+              "
+              class="tab-pane fade show"
+              id="pane_1"
+              [class]="crrFuncTab == curriculumVitaeFuncID ? 'active' : ''"
+            >
+              <ng-container [ngTemplateOutlet]="curriculumVitae"></ng-container>
+            </div> -->
+            <!-- Pane 2: Thông tin công việc-->
+            <!-- <div
+              *ngIf="jobInfoFunc && jobInfoFunc.isActive == true"
+              class="tab-pane fade show"
+              id="pane_2"
+              [class]="crrFuncTab == jobInfoFuncID ? 'active' : ''"
+            >
+              <ng-container [ngTemplateOutlet]="jobInfo"></ng-container>
+            </div> -->
+            <!-- Pane 3: Lương phúc lợi-->
+            <!-- <div
+              *ngIf="
+                salaryBenefitInfoFunc && salaryBenefitInfoFunc.isActive == true
+              "
+              class="tab-pane fade show"
+              id="pane_3"
+              [class]="crrFuncTab == salaryBenefitInfoFuncID ? 'active' : ''"
+            >
+              <ng-container [ngTemplateOutlet]="benefit"></ng-container>
+            </div> -->
+            <!-- Pane 4: Quá trình làm việc-->
+            <!-- <div
+              *ngIf="
+                workingProcessInfoFunc &&
+                workingProcessInfoFunc.isActive == true
+              "
+              class="tab-pane fade show"
+              id="pane_4"
+              [class]="crrFuncTab == workingProcessInfoFuncID ? 'active' : ''"
+            >
+              <ng-container [ngTemplateOutlet]="workingProcess"></ng-container>
+            </div> -->
+            <!-- Pane 5: Kiến thức-->
+            <!-- <div
+              *ngIf="knowledgeInfoFunc && knowledgeInfoFunc.isActive == true"
+              class="tab-pane fade show"
+              id="pane_5"
+              [class]="crrFuncTab == knowledgeInfoFuncID ? 'active' : ''"
+            >
+              <ng-container [ngTemplateOutlet]="knowledge"></ng-container>
+            </div> -->
+            <!-- Pane 6: Sức khỏe-->
+            <!-- <div
+              *ngIf="healthInfoFunc && healthInfoFunc.isActive == true"
+              class="tab-pane fade show"
+              id="pane_6"
+              [class]="crrFuncTab == healthInfoFuncID ? 'active' : ''"
+            >
+              <ng-container [ngTemplateOutlet]="healthInfo"></ng-container>
+            </div> -->
+            <!-- Pane 7: Nghỉ việc -->
+            <!-- <div
+              *ngIf="quitJobInfoFunc && quitJobInfoFunc.isActive == true"
+              class="tab-pane fade show"
+              id="pane_7"
+              [class]="crrFuncTab == quitJobInfoFuncID ? 'active' : ''"
+            >
+              <ng-container [ngTemplateOutlet]="quitJob"></ng-container>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- <div >
+          <span libSidebarToggle [toggleSpeed]="300" sidebarID="myteambar" mainContentID="maincontent">
+            Menu
+          </span>
+        </div> -->
+        <div class="user-left" id="myteambar">
+          <!-- <lib-my-tem></lib-my-tem> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<!-- panel DASH BOARD -->
+<ng-template #dashboard>
+  <div class="d-flex flex-column">
+    <div class="profile-wrapper w-100 rounded border">
+      <div class="profile-filed w-100 p-3">
+        <!-- Header Content -->
+        <div class="d-flex justify-content-between">
+          <!--  -->
+          <div>
+            <div class="fs-3 text fw-bold pb-2">
+              <span>Xin chào, </span>
+              <span>Võ Ngọc Kim Trang</span>
+            </div>
+            <div>
+              <span class="text-gray-300">Đây là hồ sơ cá nhân của bạn</span>
+            </div>
+          </div>
+          <!-- selected box -->
+          <div>
+            <codx-valuelist mode="box"></codx-valuelist>
+          </div>
+        </div>
+
+        <!-- Componet -->
+        <div class="d-flex align-items-center justify-content-sm-start pt-4 gap-3">
+          <ng-container [ngTemplateOutlet]="item" [ngTemplateOutletContext]="{
+              $implicit: 'Remove',
+              color: '#17BB45',
+              icon: 'graph_up'
+            }"></ng-container>
+          <ng-container [ngTemplateOutlet]="item" [ngTemplateOutletContext]="{
+              $implicit: 'Remove',
+              color: '#FFA800',
+              icon: 'bar_chart'
+            }"></ng-container>
+          <ng-container [ngTemplateOutlet]="item" [ngTemplateOutletContext]="{
+              $implicit: 'Remove',
+              color: '#F64E60',
+              icon: 'graph_up'
+            }"></ng-container>
+          <ng-container [ngTemplateOutlet]="item" [ngTemplateOutletContext]="{
+              $implicit: 'Remove',
+              color: '#6C757D',
+              icon: 'bar_chart'
+            }"></ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="bg-white mt-3 w-100 me-1 rounded border col-sm-6">
+        <!-- <lib-profile-last7day></lib-profile-last7day> -->
+      </div>
+      <div class="bg-white mt-3 w-100 rounded border col-sm-6">
+        <!-- <lib-profile-dashboard-leave class="w-50"></lib-profile-dashboard-leave> -->
+      </div>
+    </div>
+    <div class="bg-white border mt-3 rounded border">
+      <!-- <lib-dashboard-register-aprrove
+        (handleRegisterApprove)="registerApprove($event)"></lib-dashboard-register-aprrove> -->
+    </div>
+    <div class="d-flex justify-content-between w-100">
+      <div class="bg-white border mt-3 p-3 rounded w-60">
+        <div class="d-flex flex-cloumn justify-content-between">
+          <span class="fw-bold">Nhân viên mới vô làm trong tháng (4)</span>
+          <div>
+            <codx-valuelist></codx-valuelist>
+          </div>
+        </div>
+        <!-- <div>
+          <lib-table-grip [data]="listThanNhan" [listFields]="listField" [isShowHeader]="false" [multiple]="false">
+            <ng-template #Employeeinfo let-item>
+              <div class="d-flex flex-row align-items-start gap-2">
+                <div class="d-flex flex-column align-items-center">
+                  <img class="emp-img" [src]="item.img" alt="dfvbgvdfgv" />
+                </div>
+                <div class="d-flex flex-column justify-content-start">
+                  <div class="info-emp">
+                    <p class="name">Nguyễn Ngọc Phương Vi</p>
+                    <i class=""></i> ELV02269
+                  </div>
+                  <p class="job">Kiểm thử chất lượng phần mềm</p>
+                  <p class="TT">Trung tâm CDC</p>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template #StartWorkingDate let-item>
+              <div class="d-flex flex-column align-items-start gap-2">
+                <div class="gender0">Thử việc</div>
+                <div class="info-date-working">
+                  Ngày vào làm: &#20;
+                  <p class="date-working">
+                    {{ item.StartWorkingDate | date : "dd/MM/yyyy" }}
+                  </p>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template #Hotline let-item>
+              <div class="d-flex flex-column gap-2">
+                <div class="holine-info">
+                  {{ item.Email }}
+                </div>
+                <div class="holine-info">
+                  {{ item.Phone }}
+                </div>
+              </div>
+            </ng-template>
+          </lib-table-grip>
+        </div> -->
+      </div>
+      <div class="mt-3 flex-grow-1 ms-1 mt-3">
+        <!-- <lib-age-statistic></lib-age-statistic> -->
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #item let-item let-icon="icon" let-color="color">
+  <div [ngStyle]="{ background: color }"
+    class="info-item d-flex align-items-center justify-content-around p-3 rounded gap-2 w-25">
+    <div class="text-white d-flex flex-column">
+      <div class="text fs-13 fw-400 p-3">Công làm việc</div>
+      <div class="text fs-3 fw-500">15/24</div>
+    </div>
+    <div>
+      <span class="text-white">ICON</span>
+    </div>
+  </div>
+</ng-template>
