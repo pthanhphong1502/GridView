@@ -1117,116 +1117,7 @@
                   [dataValues]="employeeID" [dataSource]="lstAwardData"></codx-gridview-v2>
 
                 <!-- start header -->
-                <ng-template #headerPromoTable>
-                  <div class="table-header d-flex w-100 ps-2 pe-4">
-                    <div class="w-20 text-gray-500 p-3 fw-500">
-                      <!-- <codx-label
-                        [default]="'Họ và tên'"
-                      ></codx-label> -->
-                      <span>Loại quyết định</span>
-                    </div>
-                    <div class="w-20 text-gray-500 p-3 fw-500">
-                      <!-- <codx-label
-                        fiedName="lblEmployeeStatus"
-                        [setRequire]="false"
-                        [formModel]="view.formModel"
-                        [default]="'Giới tính'"
-                      ></codx-label> -->
-                      <span>Số quyết định</span>
-                    </div>
-                    <div class="w-20 text-gray-500 p-3 fw-500">
-                      <!-- <codx-label
-                        fiedName="lblShiftWorking"
-                        [setRequire]="false"
-                        [formModel]="view.formModel"
-                        [default]="'Ngày sinh'"
-                      ></codx-label> -->
-                      <span>Ngày hiệu lực</span>
-                    </div>
-                    <div class="w-20 text-gray-500 p-3 fw-500">
-                      <!-- <codx-label
-                        fiedName="lblEmployeeInfo"
-                        [setRequire]="false"
-                        [formModel]="view.formModel"
-                        [default]="'Quan hệ gia đình'"
-                      ></codx-label> -->
-                      <span>Đến Ngày</span>
-                    </div>
-                    <div class="w-20 text-gray-500 p-3 fw-500">
-                      <!-- <codx-label
-                        fiedName="lblEmployeeContact"
-                        [setRequire]="false"
-                        [formModel]="view.formModel"
-                        [default]="'Giảm trừ gia cảnh'"
-                      ></codx-label> -->
-                      <span>Bộ phận</span>
-                    </div>
-                    <div class="w-30 text-gray-500 p-3 fw-500">
-                      <!-- <codx-label
-                        fiedName="lblEmployeeContact"
-                        [setRequire]="false"
-                        [formModel]="view.formModel"
-                        [default]="'Giảm trừ gia cảnh'"
-                      ></codx-label> -->
-                      <span>Chức danh</span>
-                    </div>
-                  </div>
-                </ng-template>
-                <!-- end header -->
-                <!-- template list -->
-                <ng-template #itemPromoTable>
-                  <div class="itemlist-custom d-flex align-items-center border-bottom">
-                    <!-- Loại quyết định -->
-                    <div class="w-20 p-3 ps-5">
-                      <codx-vll [name]="'HR003'" [value]="'10'" [showBgColor]="true" [showText]="true"
-                        [className]="'badge badge-sm badge-inline'">
-                      </codx-vll>
-                    </div>
-                    <!-- Số quyết định -->
-                    <div class="w-20 p-3">
-                      <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center text-nowrap line-clamp line-clamp-1 mb-1">
-                          98/QĐ-BN
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Ngày hiệu lực -->
-                    <div class="w-20 p-3">
-                      <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center text-nowrap line-clamp line-clamp-1 mb-1">
-                          16/10/1964
-                        </div>
-                      </div>
-                    </div>
 
-                    <!-- Đến ngày -->
-                    <div class="w-20 p-3">
-                      <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center text-nowrap line-clamp line-clamp-1 mb-1">
-                          16/10/1964
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Bộ phận -->
-                    <div class="w-20 p-3">
-                      <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center text-nowrap line-clamp line-clamp-1 mb-1">
-                          SureHCS
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Chức vụ -->
-                    <div class="w-30 p-3">
-                      <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center text-nowrap line-clamp line-clamp-1 mb-1">
-                          Phân tích nghiệp vụ
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </ng-template>
                 <!-- end template list -->
               </div>
             </div>
@@ -1399,6 +1290,30 @@
                   </ng-template> -->
                   <!-- end emptyTemplate -->
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview d-block" [id]="3">
+            <div class="rounded-2 ps-8 p-5 bg-white mb-4">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center text-primary">
+                  <span class="icon-assignment_ind icon-20 me-2"></span>
+                  <codx-label [default]="'GridView'" class="fw-bold text-uppercase fs-5-sm text-primary">
+                  </codx-label>
+                </div>
+              </div>
+
+              <div class="table-custom">
+
+                <codx-gridview-v2 #ePromoGridViewID [entityName]="'HR_Employees'" [autoFitColumns]="false"
+                  [columnsGrid]="eTestGridViewColumnGrid" [service]="'HR'" [assemblyName]="'Core'" [className]="'DataBusiness'"
+                  [hideMoreFunc]="true" [method]="'LoadDataAsync'" [predicates]="'EmployeeID=@0'"
+                  [dataValues]="employeeID" [dataSource]="lstAwardData"></codx-gridview-v2>
+
+                <!-- start header -->
+
+                <!-- end template list -->
               </div>
             </div>
           </div>
@@ -3732,5 +3647,48 @@
       <div class="d-flex flex-column">
         <codx-input type="checkbox" isChecked="true"></codx-input>
       </div>
+  </div>
+</ng-template>
+
+<!-- GridView -->
+
+<ng-template #templateETestGridViewCol1>
+  <div class="col-custom gap-5">
+    <div class="text-nowrap line-clamp line-clamp-1 mb-1 gap-5">
+      Column 1
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #templateETestGridViewCol2>
+  <div class="col-custom gap-5">
+    <div class="text-nowrap line-clamp line-clamp-1 mb-1 gap-5">
+      Column 2
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #templateETestGridViewCol3>
+  <div class="col-custom gap-5">
+    <div class="text-nowrap line-clamp line-clamp-1 mb-1 gap-5">
+      Column 1
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #templateETestGridViewCol4>
+  <div class="col-custom gap-5">
+    <div class="text-nowrap line-clamp line-clamp-1 mb-1 gap-5">
+      Column 1
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #templateETestGridViewCol5>
+  <div class="col-custom gap-5">
+    <div class="text-nowrap line-clamp line-clamp-1 mb-1 gap-5">
+      <button>Edit</button>
+      <button>Delete</button>
+    </div>
   </div>
 </ng-template>

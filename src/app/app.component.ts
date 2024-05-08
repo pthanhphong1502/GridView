@@ -57,6 +57,9 @@ export class AppComponent extends UIComponent {
     //Thông tin phúc lợi
 
     this.initEmpBenefit()
+
+    //Test GridView
+    this.initTestGridView()
   }
 
   constructor(private callfunc: CallFuncService, private inject: Injector, private routeActive: ActivatedRoute, private elementRef: ElementRef
@@ -371,6 +374,11 @@ export class AppComponent extends UIComponent {
     {
       functionID: 2,
       customName: "Nghỉ phép",
+      largeIcon: "icon-phone" // Fake icon class
+    },
+    {
+      functionID: 3,
+      customName: "Test GridView",
       largeIcon: "icon-phone" // Fake icon class
     }
   ]
@@ -1100,6 +1108,55 @@ export class AppComponent extends UIComponent {
   templateELeaveCol7: TemplateRef<any> | undefined;
 
 
+  // Test GridView
+  eTestGridViewColumnGrid!: any[];
+
+  @ViewChild('templateETestGridViewCol1', { static: true })
+  templateETestGridViewCol1: TemplateRef<any> | undefined;
+  @ViewChild('templateETestGridViewCol2', { static: true })
+  templateETestGridViewCol2: TemplateRef<any> | undefined;
+  @ViewChild('templateETestGridViewCol3', { static: true })
+  templateETestGridViewCol3: TemplateRef<any> | undefined;
+  @ViewChild('templateETestGridViewCol4', { static: true })
+  templateETestGridViewCol4: TemplateRef<any> | undefined;
+  @ViewChild('templateETestGridViewCol5', { static: true })
+  templateETestGridViewCol5: TemplateRef<any> | undefined;
+
+  initTestGridView() {
+    if (!this.eTestGridViewColumnGrid) {
+      this.eTestGridViewColumnGrid = [
+        {
+          headerText: 'Header 1',
+          template: this.templateETestGridViewCol1,
+          width: '300',
+        },
+        {
+          headerText: 'Header 2',
+          template: this.templateETestGridViewCol2,
+          width: '300',
+        },
+        {
+          headerText: 'Header 3',
+          template: this.templateETestGridViewCol3,
+          width: '300',
+        },
+        {
+          headerText: 'Header 4',
+          template: this.templateETestGridViewCol4,
+          width: '300',
+        },
+        {
+          headerText: '',
+          template: this.templateETestGridViewCol5,
+          width: '300',
+        }
+      ];
+
+      // });
+      // this.df.detectChanges();
+
+    }
+  }
 
   initEmpEPromo() {
     if (!this.ePromoColumnGrid) {
