@@ -380,6 +380,11 @@ export class AppComponent extends UIComponent {
       functionID: 3,
       customName: "Test GridView",
       largeIcon: "icon-phone" // Fake icon class
+    },
+    {
+      functionID: 4,
+      customName: "Hộ chiếu",
+      largeIcon: "icon-phone" // Fake icon class
     }
   ]
 
