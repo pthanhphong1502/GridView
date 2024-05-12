@@ -95,19 +95,73 @@
     </div>
   </div>
   <div>
-    <codx-gridview-v2 #eEvaluationGridViewID [entityName]="'HR_Employees'" [autoFitColumns]="false"
+    <codx-gridview-v2 #eEvaluationGridViewID [entityName]="'HR_Employees'" [autoFitColumns]="true"
                     [columnsGrid]="ePassport" [service]="'HR'" [assemblyName]="'Core'"
                     [className]="'DataBusiness'" [hideMoreFunc]="true" [method]="'LoadDataAsync'"
                     [predicates]="'EmployeeID=@0'"
-                    ></codx-gridview-v2>
+                    [dataSource]="lstDataFake"></codx-gridview-v2>
   </div>
 </ng-template>
 
-<ng-template #templatePassportCol1></ng-template>
-<ng-template #templatePassportCol2></ng-template>
-<ng-template #templatePassportCol3></ng-template>
-<ng-template #templatePassportCol4></ng-template>
-<ng-template #templatePassportCol5></ng-template>
-<ng-template #templatePassportCol6></ng-template>
-<ng-template #templatePassportCol7></ng-template>
+
+    <ng-template #templatePassportCol1>
+      <ng-container *ngFor="let id of lstDataFake">
+        <ng-container *ngFor="let info of id.detail">
+        <div>
+          {{id.code}} + aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+      </ng-container>
+    </ng-container>
+    </ng-template>
+    <ng-template #templatePassportCol2>
+      <ng-container *ngFor="let id of lstDataFake">
+        <ng-container *ngFor="let info of id.detail">
+      <div>{{info.nationTo}}</div>
+    </ng-container>
+  </ng-container>
+    </ng-template>
+    <ng-template #templatePassportCol3>
+      <ng-container *ngFor="let id of lstDataFake">
+        <ng-container *ngFor="let info of id.detail">
+      <div>{{info.fromDate}}</div>
+    </ng-container>
+  </ng-container>
+    </ng-template>
+    <ng-template #templatePassportCol4>
+      <ng-container *ngFor="let id of lstDataFake">
+        <ng-container *ngFor="let info of id.detail">
+      <div>{{info.toDate}}</div>
+    </ng-container>
+  </ng-container>
+    </ng-template>
+    <ng-template #templatePassportCol5>
+      <ng-container *ngFor="let id of lstDataFake">
+        <ng-container *ngFor="let info of id.detail">
+      <div>{{info.numberDay}}</div>
+    </ng-container>
+  </ng-container>
+    </ng-template>
+    <ng-template #templatePassportCol6>
+      <ng-container *ngFor="let id of lstDataFake">
+        <ng-container *ngFor="let info of id.detail">
+      <div>{{info.noteChildren}}</div>
+    </ng-container>
+  </ng-container>
+    </ng-template>
+    <ng-template #templatePassportCol7>
+      <ng-container *ngFor="let id of lstDataFake">
+        <ng-container *ngFor="let info of id.detail">
+      <div>
+        <button type="button" class="btn btn-icon btn-white">
+          <span class="icon-edit icon-12"></span>
+        </button>
+        <button type="button" class="btn btn-icon btn-white">
+          <span class="icon-delete icon-12"></span>
+        </button>
+      </div>
+    </ng-container>
+  </ng-container>
+    </ng-template>
+
+
 

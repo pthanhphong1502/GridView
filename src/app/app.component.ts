@@ -201,8 +201,8 @@ export class AppComponent extends UIComponent {
 
     {
       functionID: 1,
-      customName: "Dashboard",
-      largeIcon: "icon-columns_gap" // Fake icon class
+      customName: "Quá trình làm việc",
+      largeIcon: "icon-timeline" // Fake icon class
     },
     {
       functionID: 2,
@@ -210,9 +210,9 @@ export class AppComponent extends UIComponent {
       largeIcon: "icon-assignment_ind" // Fake icon class
     },
     {
-      functionID: 3,
-      customName: "Quá trình làm việc",
-      largeIcon: "icon-timeline" // Fake icon class
+      functionID: 1,
+      customName: "Dashboard",
+      largeIcon: "icon-columns_gap" // Fake icon class
     },
     {
       functionID: 4,

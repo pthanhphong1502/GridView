@@ -35,37 +35,37 @@ export class TabComponent extends UIComponent {
         {
           headerText: 'Số hộ chiếu',
           template: this.templatePassportCol1,
-          width: '240',
+          width: '15%',
         },
         {
           headerText: 'Quốc gia đến',
           template: this.templatePassportCol2,
-          width: '240',
+          width: '15%',
         },
         {
           headerText: 'Từ ngày',
           template: this.templatePassportCol3,
-          width: '240',
+          width: '15%',
         },
         {
           headerText: 'Đến ngày',
           template: this.templatePassportCol4,
-          width: '240',
+          width: '15%',
         },
         {
           headerText: 'Số ngày',
           template: this.templatePassportCol5,
-          width: '240',
+          width: '15%',
         },
         {
           headerText: 'Ghi chú',
           template: this.templatePassportCol6,
-          width: '240',
+          width: '15%',
         },
         {
           headerText: '',
-          template: this.templatePassportCol6,
-          width: '240',
+          template: this.templatePassportCol7,
+          width: '10%',
         }
       ];
     }

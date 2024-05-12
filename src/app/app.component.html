@@ -338,7 +338,7 @@
            width: 100%;">
           <div *ngIf="crrFuncTabNum == 1" class="tab-pane fade show" [class]="crrFuncTabNum == 1 ? 'active' : ''"
             id="pane_1">
-            <ng-container [ngTemplateOutlet]="dashboard"></ng-container>
+            <ng-container [ngTemplateOutlet]="JobProcessTab"></ng-container>
           </div>
           <!-- Pane 2: Sơ yếu lí lịch -->
           <div *ngIf="crrFuncTabNum == 2" class="tab-pane fade show" id="pane_2"
@@ -348,7 +348,7 @@
           <!-- Pane 3:  Qúa trình làm việc-->
           <div *ngIf="crrFuncTabNum == 3" class="tab-pane fade show" id="pane_3"
             [class]="crrFuncTabNum == 3 ? 'active' : ''">
-            <ng-container [ngTemplateOutlet]="JobProcessTab"></ng-container>
+            <ng-container [ngTemplateOutlet]="dashboard"></ng-container>
           </div>
           <!-- Pane 4: Khen thưởng kỷ luật-->
           <div *ngIf="crrFuncTabNum == 4" class="tab-pane fade show" id="pane_4"
